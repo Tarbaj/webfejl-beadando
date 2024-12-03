@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Tarbaj Bence">
+    <meta name="leírás" content="webshop projektmunka egyetemre">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valamilyen webshop</title>
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="képek/favicon.ico">
+
+    <script src="jquery-valid/jquery-3.7.1.min.js"></script>
+    <script src="jquery-valid/dist/jquery.validate.min.js"></script>
+    <script>
+         $(document).ready(function(){
+            $("#vasarform").validate({
+                rules: {
+                vezeteknev: "required",
+                keresztnev: "required",
+                email: {
+                required: true,
+                email: true
+                },
+                telefonszam: {
+                required: true,
+                digits: true,
+                minlength: 11,
+                maxlength: 11
+                },
+                cim: "required",
+                },
+                messages: {
+                vezeteknev: "<br>Kérlek írd be a vezetékneved!",
+                keresztnev: "<br>Kérlek írd be a keresztneved!",
+                email: "<br>Kérlek valós email címet adj meg!",
+                telefonszam: "<br>Kérlek add meg a telefonszámod!",
+                cim: "<br>Kérlek add meg a címed!",
+                },
+            });
+         });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Valamilyen webshop</h1>
+    </header>
+
+    <nav class="container">
+        <li><a href="#" class="current">Termékek</a></li>
+        <li><a href="velemenyek.html">Vélemények</a></li>
+        <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        <li><a href="kepgaleria.html">Képgaléria</a></li>
+    </nav>
+
+    
+
+    <section class="container nagy">
+        <article class="szuro container">
+            <form name="szuroform" id="myform">
+                <p class="koz">
+                    <label>
+                        <input type="range" id="csuszka" min="1000" step="5" max="10000" value="10000">
+                    </label> <br>
+                    Ár: 1000 - <span id="ertek">10000</span> Ft
+                </p>
+                <p>
+                    Kategóriák:<br>
+                    <label><input type="checkbox" value="Pólók" id="polo" checked> Pólók<br></label>
+                    <label><input type="checkbox" value="Nadrágok" id="naci" checked> Nadrágok<br></label>
+                    <label><input type="checkbox" value="Pulóverek" id="pulcsi" checked> Pulóverek<br></label>
+                </p>
+                <p>
+                    Méret:<br>
+                    <label><input type="radio" value="osszes" id="ossz" name="radio" checked> Mind<br></label>
+                    <label><input type="radio" value="L" id="L" name="radio"> L<br></label>
+                    <label><input type="radio" value="M" id="M" name="radio"> M<br></label>
+                    <label><input type="radio" value="S" id="S" name="radio"> S<br></label>
+                </p>
+                <p class="koz">
+                    <input type="button" value="Szűrés" id="szures">
+                    <input type="reset" value="Visszaállít" id="res">
+                </p>
+            </form>
+        </article>
+
+        <span class="container termek pulcsi" id="prod1" data-id="1" data-meret="L" data-ar="5000" data-nev="Szürke pulóver">
+            <img src="képek/prod1.jpg" alt="Szürke L-méretű pulóver">
+            <div>
+            Szürke pulóver<br>
+            L méret<br>
+            5000 Ft<br><br>
+            <label><input type="checkbox" id="1" value="prod1">Kosár</label>
+            </div>
+        </span>
+        <span class="container termek pulcsi" id="prod2" data-id="2" data-meret="M" data-ar="4500" data-nev="Szürke pulóver">
+            <img src="képek/prod2.jpg" alt="Szürke M-méretű pulóver">
+            <div>
+            Szürke pulóver<br>
+            M méret<br>
+            4500 Ft<br><br>
+            <label><input type="checkbox" id="2" value="prod2">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek naci" id="prod3" data-id="3" data-meret="L" data-ar="10000" data-nev="Szürke farmernadrág">
+            <img src="képek/prod3.jpg" alt="Szürke L-méretű farmer">
+            <div>
+            Szürke farmer<br>
+            L méret<br>
+            10000 Ft<br><br>
+            <label><input type="checkbox" id="3" value="prod3">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek naci" id="prod4" data-id="4" data-meret="M" data-ar="7000" data-nev="Barna nadrág">
+            <img src="képek/prod4.jpg" alt="Barna M-méretű nadrág">
+            <div>
+            Barna nadrág<br>
+            M méret<br>
+            7000 Ft<br><br>
+            <label><input type="checkbox" id="4" value="prod4">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek naci" id="prod5" data-id="5" data-meret="S" data-ar="9500" data-nev="Fekete S-méretű farmer">
+            <img src="képek/prod5.jpg" alt="Fekete S-méretű farmer">
+            <div>
+            Fekete farmer<br>
+            S méret<br>
+            9500 Ft<br><br>
+            <label><input type="checkbox" id="5" value="prod5">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek naci" id="prod6" data-id="6" data-meret="S" data-ar="2000" data-nev="Szürke nadrág">
+            <img src="képek/prod6.jpg" alt="Szürke S-méretű nadrág">
+            <div>
+            Szürke nadrág<br>
+            S méret<br>
+            2000 Ft<br><br>
+            <label><input type="checkbox" id="6" value="prod6">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek naci" id="prod7" data-id="7" data-meret="L" data-ar="3000" data-nev="Fekete nadrág">
+            <img src="képek/prod7.jpg" alt="Fekete L-méretű nadrág">
+            <div>
+            Fekete nadrág<br>
+            L méret<br>
+            3000 Ft<br><br>
+            <label><input type="checkbox" id="7" value="prod7">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek polo" id="prod8" data-id="8" data-meret="M" data-ar="10000" data-nev="Sárga póló">
+            <img src="képek/prod8.jpg" alt="Sárga M-méretű póló">
+            <div>
+            Sárga póló<br>
+            M méret<br>
+            10000 Ft<br><br>
+            <label><input type="checkbox" id="8" value="prod8">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek polo" id="prod9" data-id="9" data-meret="L" data-ar="6000" data-nev="Kék póló">
+            <img src="képek/prod9.jpg" alt="Kék L-méretű póló">
+            <div>
+            Kék póló<br>
+            L méret<br>
+            6000 Ft<br><br>
+            <label><input type="checkbox" id="9" value="prod9">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek polo" id="prod10" data-id="10" data-meret="S" data-ar="3500" data-nev="Fekete póló">
+            <img src="képek/prod10.jpg" alt="Fekete S-méretű póló">
+            <div>
+            Fekete póló<br>
+            S méret<br>
+            3500 Ft<br><br>
+            <label><input type="checkbox" id="10" value="prod10">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek polo" id="prod11" data-id="11" data-meret="M" data-ar="6500" data-nev="Fekete póló">
+            <img src="képek/prod11.jpg" alt="Fekete M-méretű póló">
+            <div>
+            Fekete póló<br>
+            M méret<br>
+            6500 Ft<br><br>
+            <label><input type="checkbox" id="11" value="prod11">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek polo" id="prod12" data-id="12" data-meret="S" data-ar="2750" data-nev="Kék póló">
+            <img src="képek/prod12.jpg" alt="Kék S-méretű póló">
+            <div>
+            Kék póló<br>
+            S méret<br>
+            2750 Ft<br><br>
+            <label><input type="checkbox" id="12" value="prod12">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek polo" id="prod13" data-id="13" data-meret="M" data-ar="2500" data-nev="Kék póló">
+            <img src="képek/prod13.jpg" alt="Kék M-méretű póló">
+            <div>
+            Kék póló<br>
+            M méret<br>
+            2500 Ft<br><br>
+            <label><input type="checkbox" id="13" value="prod13">Kosár</label>
+        </div>
+        </span>
+        <span class="container termek polo" id="prod14" data-id="14" data-meret="S" data-ar="1000" data-nev="Fehér póló">
+            <img src="képek/prod14.jpg" alt="Fehér S-méretű póló">
+            <div>
+            Fehér póló<br>
+            S méret<br>
+            1000 Ft<br><br>
+            <label><input type="checkbox" id="14" value="prod14">Kosár</label>
+            </div>
+        </span>
+    </section>
+
+    <p class="koz gomb">
+        <input type="button" id="kosarba" value="Kosárba tesz">
+    </p>
+
+    <p class="koz none" id="nincs">Nincs mutatható termék :(</p>
+    <hr>
+    <h1>Kosár</h1>
+
+    <section class="kosar">
+        <ul class="container" id="kosar"></ul>
+
+        <p class="koz">
+            Összesen: <span id="vegso">0</span> Ft<br>
+            A fizetés a csomag átvételekor történik!
+        </p>
+    </section>
+
+    <section class="container kosarform">
+        <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" name="rendeles" class="vasar container" id="vasarform" novalidate>
+            <input type="hidden" name="kosartartalma" id="kosartartalma">
+            
+            Kérem adja meg az adatait a megrendeléshez:<br><br>
+            <label for="vezeteknev">Vezetéknév:<br><input type="text" name="vezeteknev" id="vezeteknev" size="20"></label><br><br>
+            <label for="keresztnev">Keresztnév:<br><input type="text" name="keresztnev" id="keresztnev" size="20"></label><br><br>
+            <label for="email">E-mail:<br><input type="email" name="email" id="email" size="20"></label><br><br>
+            <label for="telefonszam">Telefonszám:<br><input type="tel" name="telefonszam" id="telefonszam" size="20" placeholder="06301234567"></label><br><br>
+            Átvétel típusa:<br>
+            <label for="hazhoz"><input type="radio" name="atvetel" id="hazhoz" value="hazhozszallitas" checked>Házhozszállítás<br></label>
+            <label for="uzlet"><input type="radio" name="atvetel" id="uzlet" value="uzlet"> Átvétel az áruházban</label><br><br>
+            <label for="cim">Rendelési cím (áruházban való átvétel esetén lakcím):<br><input type="text" name="cim" id="cim" size="20"></label><br><br>
+            <label for="visszajelzes">Visszajelzés (opcionális):<br><input type="textarea" name="visszajelzes" id="visszajelzes"></label><br><br>
+            <input type="submit" name="rendelesleadas" id="rendelesleadas" value="Rendelés leadása">
+            <input type="reset" name="adatvisszaallit" id="adatvisszaallit" value="Adatok törlése">
+            <p class="koz">Üzletünket az alábbi címen találja: 1163 Budapest, Újszász utca 70<br>
+            Köszönjük hogy nálunk vásárolt! :)</p>
+        </form>
+    </section>
+
+    <footer>
+        Ez az oldal egy projektmunka, nem valódi
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

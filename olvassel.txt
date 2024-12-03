@@ -1,0 +1,6 @@
+Oldal készítője: Tarbaj Bence
+URL cím:
+A weboldalam egy retro témájú webshop, az index oldalon van egy szűrő és egy kosár, amelyhez tartozik egy validált form. Van egy vélemények oldal váleményekkel, egy kapcsolat oldal információval és egy képpel, és egy képgaléria oldal a galériával.
+A JS kódom az index oldalon található, kettő részre osztva. az egyik egy szűrő működését képzi, míg a másik a kosárba tevést látja el.
+Mindegyik oldalon a headerben használtam a JandaCurlygirlChunky fontot, és a többi szövegben meg a Typo_Round_Bold_Demo fontot. A két font a css mappán belül a fonts mappában található.
+Máshonnan nem vettem át kódot, a jquery galéria és validálás kivételével.
